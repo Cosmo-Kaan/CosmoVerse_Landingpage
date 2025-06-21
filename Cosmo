@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoVerse - Precise AI Translations for Complex Content</title>
+    <style>
+        /* --- GRUNDLEGENDE STILE & DARK THEME --- */
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e;
+            --primary-text-color: #e0e0e0;
+            --secondary-text-color: #b0b0b0;
+            --accent-color: #4a90e2; /* Ein professionelles Blau */
+            --accent-hover-color: #63a4ff;
+            --border-color: #333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text-color);
+            line-height: 1.6;
+        }
+
+        /* --- CONTAINER & SEKTIONEN --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: var(--surface-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-text-color);
+            font-weight: 700;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .header-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--secondary-text-color);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* --- CTA BUTTONS --- */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover-color);
+            border-color: var(--accent-hover-color);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* --- FEATURES SEKTION ("What We Offer") --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .feature-card p, .feature-card .language-list {
+            color: var(--secondary-text-color);
+            flex-grow: 1;
+        }
+        
+        .lang-label {
+            font-weight: bold;
+            color: var(--primary-text-color);
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .language-list {
+            padding-left: 0;
+            list-style-type: none;
+            font-size: 0.95rem;
+        }
+        
+        .language-list li {
+            margin-bottom: 5px;
+        }
+
+        /* --- DEMO VIDEO SEKTION --- */
+        .demo-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+            margin-top: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- KONTAKTFORMULAR SEKTION --- */
+        .contact-form {
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            background-color: var(--surface-color);
+            color: var(--primary-text-color);
+            font-size: 1rem;
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--secondary-text-color);
+        }
+
+        .contact-form button {
+            width: fit-content;
+            align-self: center;
+        }
+
+        .alternative-contact {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .alternative-contact p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: var(--bg-color);
+            color: var(--secondary-text-color);
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .header { min-height: 80vh; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 80%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================== HEADER ================== -->
+    <header class="header">
+        <div class="header-content container">
+            <h1>
+                <span class="lang-label">(EN) Precise Multilingual AI Translations.</span>
+                <span class="lang-label">(DE) Präzise multilinguale KI-Übersetzungen.</span>
+            </h1>
+            <p class="subtitle">
+                <span class="lang-label">(EN) From Artificial Intelligence, Finance & Crypto to social discourse – we give your content a global and context-aware voice.</span>
+                <span class="lang-label">(DE) Von künstlicher Intelligenz über Finanzen & Krypto bis hin zu gesellschaftlichen Debatten – wir geben Ihren Inhalten eine globale und kontexttreue Stimme.</span>
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn">
+                    <span class="lang-label">(EN) Discuss Project</span>
+                    <span class="lang-label">(DE) Projekt besprechen</span>
+                </a>
+                <a href="mailto:kaan@cosmo-mann.de?subject=Inquiry%20about%20AI%20Translation%20Services" class="btn btn-secondary">
+                    <span class="lang-label">(EN) Email Us Directly</span>
+                    <span class="lang-label">(DE) Direkt mailen</span>
+                </a>
+                <a href="https://discord.gg/uWtyGsfJPv" target="_blank" class="btn btn-secondary">
+                    <span class="lang-label">(EN) Join Community</span>
+                    <span class="lang-label">(DE) Community beitreten</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================== FEATURES ("What We Offer") ================== -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2>
+                    <span class="lang-label">(EN) What We Offer</span>
+                    <span class="lang-label">(DE) Unsere Dienstleistungen</span>
+                </h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <h3>
+                            <span class="lang-label">(EN) Precise Text Translation</span>
+                            <span class="lang-label">(DE) Präzise Textübersetzung</span>
+                        </h3>
+                        <p>
+                            <span class="lang-label">(EN) We don't just translate your texts; we understand them. Our AI models are trained on complex terminologies for a precise, context-aware translation.</span>
+                            <span class="lang-label">(DE) Wir übersetzen Ihre Texte nicht nur, wir verstehen sie. Unsere KI-Modelle sind auf komplexe Terminologien trainiert, um eine präzise, kontexttreue Übersetzung zu gewährleisten.</span>
+                        </p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>
+                            <span class="lang-label">(EN) Multimedia Localization</span>
+                            <span class="lang-label">(DE) Multimedia-Lokalisierung</span>
+                        </h3>
+                        <p>
+                            <span class="lang-label">(EN) Reach a global audience with perfectly synchronized AI voice-overs and precise subtitles. Upon request, we also offer AI-powered lip-sync translation for a truly seamless viewing experience.</span>
+                            <span class="lang-label">(DE) Erreichen Sie ein globales Publikum mit perfekt synchronisierten KI-Voice-Overs und präzisen Untertiteln. Auf Wunsch bieten wir auch KI-gestützte Lip-Sync-Übersetzungen für ein absolut nahtloses Seherlebnis an.</span>
+                        </p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>
+                            <span class="lang-label">(EN) Broad Language Support</span>
+                            <span class="lang-label">(DE) Umfassende Sprachunterstützung</span>
+                        </h3>
+                        <p>
+                            <span class="lang-label">(EN) We support a wide range of languages, including but not limited to:</span>
+                            <span class="lang-label">(DE) Wir unterstützen eine Vielzahl von Sprachen, darunter:</span>
+                        </p>
+                        <ul class="language-list">
+                            <li>中文 (Chinese, Chinesisch)</li>
+                            <li>Español (Spanish, Spanisch)</li>
+                            <li>हिन्दी (Hindi, Hindi)</li>
+                            <li>العربية (Arabic, Arabisch)</li>
+                            <li>Português (Portuguese, Portugiesisch)</li>
+                            <li>Русский (Russian, Russisch)</li>
+                            <li>日本語 (Japanese, Japanisch)</li>
+                            <li>Türkçe (Turkish, Türkisch)</li>
+                            <li>... and many more.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== DEMO VIDEO ================== -->
+        <section id="demo" class="demo">
+            <div class="container">
+                <div class="demo-content">
+                    <h2>
+                        <span class="lang-label">(EN) See Our Technology in Action</span>
+                        <span class="lang-label">(DE) Sehen Sie unsere Technologie in Aktion</span>
+                    </h2>
+                    <p>
+                        <span class="lang-label">(EN) This demo video showcases the quality and versatility of our AI translation technology. See for yourself how we make complex content accessible to a global audience.</span>
+                        <span class="lang-label">(DE) Dieses Demo-Video zeigt die Qualität und Vielseitigkeit unserer KI-Übersetzungstechnologie. Sehen Sie selbst, wie wir komplexe Inhalte für ein globales Publikum zugänglich machen.</span>
+                    </p>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/GI7iG-_znWw" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== CONTACT FORM ================== -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>
+                    <span class="lang-label">(EN) Let's Start Your Project</span>
+                    <span class="lang-label">(DE) Starten wir Ihr Projekt</span>
+                </h2>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    
+                    <input type="hidden" name="access_key" value="53e95088-7ffd-48a3-8e83-26a350404fae">
+                    <input type="hidden" name="subject" value="Contact Inquiry from CosmoVerse">
+                    
+                    <input type="text" name="name" placeholder="Your Name / Ihr Name" required>
+                    <input type="email" name="email" placeholder="Your Email / Ihre E-Mail" required>
+                    <textarea name="message" rows="6" placeholder="Tell us about your project... / Erzählen Sie uns von Ihrem Projekt..." required></textarea>
+                    
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <button type="submit" class="btn">
+                        <span class="lang-label">(EN) Send Request</span>
+                        <span class="lang-label">(DE) Anfrage senden</span>
+                    </button>
+                </form>
+
+                <div class="alternative-contact">
+                    <p>
+                        <span class="lang-label">(EN) Or contact us directly:</span>
+                        <span class="lang-label">(DE) Oder kontaktieren Sie uns direkt:</span>
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="mailto:kaan@cosmo-mann.de?subject=Inquiry%20about%20AI%20Translation%20Services" class="btn btn-secondary">
+                            <span class="lang-label">(EN) Email Us Directly</span>
+                            <span class="lang-label">(DE) Direkt mailen</span>
+                        </a>
+                        <a href="https://discord.gg/uWtyGsfJPv" target="_blank" class="btn btn-secondary">
+                            <span class="lang-label">(EN) Join Community</span>
+                            <span class="lang-label">(DE) Community beitreten</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================== FOOTER ================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 CosmoVerse. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
