@@ -14,11 +14,10 @@
             --accent-color: #4a90e2; /* Ein professionelles Blau */
             --accent-hover-color: #63a4ff;
             --border-color: #333;
+            --success-color: #28a745;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
@@ -35,13 +34,8 @@
             padding: 0 20px;
         }
 
-        section {
-            padding: 80px 0;
-        }
-
-        section:nth-of-type(odd) {
-            background-color: var(--surface-color);
-        }
+        section { padding: 80px 0; }
+        section:nth-of-type(odd) { background-color: var(--surface-color); }
 
         h1, h2, h3 {
             color: var(--primary-text-color);
@@ -63,12 +57,7 @@
             text-align: center;
             background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
         }
-
-        .header-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
+        .header-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
         .header-content .subtitle {
             font-size: 1.25rem;
             color: var(--secondary-text-color);
@@ -83,7 +72,6 @@
             gap: 15px;
             flex-wrap: wrap;
         }
-
         .btn {
             display: inline-block;
             padding: 12px 25px;
@@ -97,29 +85,25 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-
         .btn:hover {
             background-color: var(--accent-hover-color);
             border-color: var(--accent-hover-color);
         }
-
         .btn-secondary {
             background-color: transparent;
             color: var(--accent-color);
         }
-
         .btn-secondary:hover {
             background-color: var(--accent-color);
             color: #fff;
         }
 
-        /* --- FEATURES SEKTION ("What We Offer") --- */
+        /* --- FEATURES SEKTION --- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
         .feature-card {
             background-color: var(--bg-color);
             padding: 30px;
@@ -129,39 +113,31 @@
             display: flex;
             flex-direction: column;
         }
-
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--accent-color);
         }
-
         .feature-card p, .feature-card .language-list {
             color: var(--secondary-text-color);
             flex-grow: 1;
         }
-        
         .lang-label {
             font-weight: bold;
             color: var(--primary-text-color);
             display: block;
             margin-top: 10px;
         }
-        
         .language-list {
             padding-left: 0;
             list-style-type: none;
             font-size: 0.95rem;
         }
-        
-        .language-list li {
-            margin-bottom: 5px;
-        }
+        .language-list li { margin-bottom: 5px; }
 
         /* --- DEMO VIDEO SEKTION --- */
         .demo-content {
@@ -169,10 +145,9 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
@@ -181,7 +156,6 @@
             margin-top: 40px;
             border: 1px solid var(--border-color);
         }
-
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -189,6 +163,104 @@
             width: 100%;
             height: 100%;
         }
+
+        /* --- KRYPTO-ZAHLUNGSABSCHNITT STILE --- */
+        .payment-section {
+            background-color: var(--bg-color);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+        }
+        .payment-section h2 { color: var(--primary-text-color); font-size: 2.2rem; }
+        .crypto-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .wallet-address {
+            background: var(--surface-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .wallet-address h3 { color: var(--primary-text-color); margin-bottom: 15px; }
+        .address-field {
+            background: var(--bg-color);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            color: var(--secondary-text-color);
+        }
+        .copy-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .copy-button:hover { background: var(--accent-hover-color); }
+        .qr-section {
+            text-align: center;
+            background: var(--surface-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .qr-section h3 { color: var(--primary-text-color); }
+        .qr-code {
+            max-width: 200px;
+            height: auto;
+            margin: 15px auto;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: white;
+            padding: 10px;
+        }
+        .instructions {
+            background: rgba(74, 144, 226, 0.1); /* Blauer Akzent */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .instructions h3 { color: var(--accent-color); margin-bottom: 15px; }
+        .instructions ol { margin-left: 20px; }
+        .instructions li { margin-bottom: 8px; color: var(--secondary-text-color); }
+        .instructions strong { color: var(--primary-text-color); }
+        .supported-currencies {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0 30px 0;
+            flex-wrap: wrap;
+        }
+        .currency-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .warning {
+            background: rgba(255, 180, 0, 0.1);
+            border-left: 4px solid #ffb400;
+            color: #ffc94d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .warning ul { margin-top: 10px; margin-left: 20px; }
+        .warning strong { color: white; }
 
         /* --- KONTAKTFORMULAR SEKTION --- */
         .contact-form {
@@ -198,7 +270,6 @@
             flex-direction: column;
             gap: 20px;
         }
-
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -209,26 +280,11 @@
             color: var(--primary-text-color);
             font-size: 1rem;
         }
-        
         .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: var(--secondary-text-color);
-        }
-
-        .contact-form button {
-            width: fit-content;
-            align-self: center;
-        }
-
-        .alternative-contact {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .alternative-contact p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
+        .contact-form textarea::placeholder { color: var(--secondary-text-color); }
+        .contact-form button { width: fit-content; align-self: center; }
+        .alternative-contact { text-align: center; margin-top: 50px; }
+        .alternative-contact p { margin-bottom: 20px; font-size: 1.1rem; }
 
         /* --- FOOTER --- */
         .footer {
@@ -246,6 +302,7 @@
             .header { min-height: 80vh; }
             .cta-buttons { flex-direction: column; align-items: center; }
             .btn { width: 80%; text-align: center; }
+            .crypto-info { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -267,9 +324,9 @@
                     <span class="lang-label">(EN) Discuss Project</span>
                     <span class="lang-label">(DE) Projekt besprechen</span>
                 </a>
-                <a href="mailto:kaan@cosmo-mann.de?subject=Inquiry%20about%20AI%20Translation%20Services" class="btn btn-secondary">
-                    <span class="lang-label">(EN) Email Us Directly</span>
-                    <span class="lang-label">(DE) Direkt mailen</span>
+                <a href="#payment" class="btn btn-secondary">
+                    <span class="lang-label">(EN) Crypto Payments</span>
+                    <span class="lang-label">(DE) Krypto-Zahlungen</span>
                 </a>
                 <a href="https://discord.gg/uWtyGsfJPv" target="_blank" class="btn btn-secondary">
                     <span class="lang-label">(EN) Join Community</span>
@@ -358,6 +415,68 @@
             </div>
         </section>
 
+        <!-- ================== KRYPTO-ZAHLUNGSABSCHNITT ================== -->
+        <section id="payment">
+            <div class="container">
+                <div class="payment-section">
+                    <h2>
+                        <span class="lang-label">(EN) Pay with Cryptocurrency</span>
+                        <span class="lang-label">(DE) Bezahlung mit Kryptowährungen</span>
+                    </h2>
+                    <p style="text-align: center; margin-bottom: 20px; color: var(--secondary-text-color);">
+                         <span class="lang-label">(EN) We accept decentralized payments for maximum independence and security.</span>
+                         <span class="lang-label">(DE) Wir akzeptieren dezentrale Zahlungen für maximale Unabhängigkeit und Sicherheit.</span>
+                    </p>
+
+                    <div class="supported-currencies">
+                        <span class="currency-badge">ETH (Ethereum)</span>
+                        <span class="currency-badge">USDC (ERC-20)</span>
+                        <span class="currency-badge">EURC (ERC-20)</span>
+                    </div>
+
+                    <div class="crypto-info">
+                        <div class="wallet-address">
+                            <h3>Wallet-Adresse (ETH & ERC-20)</h3>
+                            <div class="address-field" id="walletAddress">
+                                0x93C2b20f26941A5C13D1b68A6B2967F7d3f6651D
+                            </div>
+                            <button class="copy-button" onclick="copyAddress()">📋 Adresse kopieren</button>
+                        </div>
+
+                        <div class="qr-section">
+                            <h3>QR-Code scannen</h3>
+                            <img src="wallet-qr-code.png" alt="Wallet QR Code" class="qr-code" id="qrCode">
+                        </div>
+                    </div>
+
+                    <div class="instructions">
+                        <h3>
+                            <span class="lang-label">(EN) Payment Instructions</span>
+                            <span class="lang-label">(DE) Zahlungsanweisungen</span>
+                        </h3>
+                        <ol>
+                            <li><strong>Kontakt aufnehmen:</strong> <span class="lang-label">(EN) You will receive a detailed offer via e-mail (e.g., "200 USDC for the AI translation").</span><span class="lang-label">(DE) Sie erhalten ein detailliertes Angebot per E-Mail (z.B. "200 USDC für die KI-Übersetzung").</span></li>
+                            <li><strong>Zahlung senden:</strong> <span class="lang-label">(EN) Send the agreed amount to the wallet address listed above.</span><span class="lang-label">(DE) Senden Sie den vereinbarten Betrag an die oben angegebene Wallet-Adresse.</span></li>
+                            <li><strong>Bestätigung senden:</strong> <span class="lang-label">(EN) Reply to our offer email with the transaction ID (TXID).</span><span class="lang-label">(DE) Antworten Sie auf unsere Angebots-E-Mail mit der Transaktions-ID (TXID).</span></li>
+                            <li><strong>Verifizierung:</strong> <span class="lang-label">(EN) We verify the payment via a block explorer like Etherscan.io.</span><span class="lang-label">(DE) Wir verifizieren die Zahlung über einen Block-Explorer wie Etherscan.io.</span></li>
+                        </ol>
+                    </div>
+
+                    <div class="warning">
+                        <strong>
+                            <span class="lang-label">(EN) Important Notes</span>
+                            <span class="lang-label">(DE) Wichtige Hinweise</span>
+                        </strong>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li><span class="lang-label">(EN) Only send ETH or ERC-20 tokens (USDC, EURC) to this address.</span><span class="lang-label">(DE) Senden Sie nur ETH oder ERC-20 Token (USDC, EURC) an diese Adresse.</span></li>
+                            <li><span class="lang-label">(EN) You are responsible for the transaction fees (gas fees).</span><span class="lang-label">(DE) Transaktionsgebühren (Gas Fees) gehen zu Ihren Lasten.</span></li>
+                            <li><span class="lang-label">(EN) Always double-check the address before sending.</span><span class="lang-label">(DE) Überprüfen Sie die Adresse sorgfältig vor dem Senden.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ================== CONTACT FORM ================== -->
         <section id="contact" class="contact">
             <div class="container">
@@ -408,6 +527,40 @@
             <p>© 2025 CosmoVerse. All Rights Reserved.</p>
         </div>
     </footer>
+    
+    <!-- ================== JAVASCRIPT FÜR KOPIERFUNKTION ================== -->
+    <script>
+        function copyAddress() {
+            const addressField = document.getElementById('walletAddress');
+            const address = addressField.textContent.trim(); 
+            
+            navigator.clipboard.writeText(address).then(function() {
+                const button = document.querySelector('.copy-button');
+                const originalText = button.textContent;
+                button.textContent = '✅ Kopiert!';
+                button.style.background = 'var(--success-color)';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.background = 'var(--accent-color)';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Fehler beim Kopieren der Adresse: ', err);
+                alert('Adresse konnte nicht automatisch kopiert werden. Bitte manuell markieren und kopieren.');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const qrImage = document.getElementById('qrCode');
+            qrImage.onerror = function() {
+                this.style.display = 'none';
+                const errorText = document.createElement('p');
+                errorText.textContent = 'QR-Code konnte nicht geladen werden. Bitte Adresse manuell kopieren.';
+                errorText.style.color = 'var(--secondary-text-color)';
+                this.parentElement.appendChild(errorText);
+            };
+        });
+    </script>
 
 </body>
 </html>
