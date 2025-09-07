@@ -34,27 +34,31 @@
         .demo-content { text-align: center; max-width: 800px; margin: 0 auto; }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin-top: 40px; border: 1px solid var(--border-color); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
         .payment-section { background-color: var(--bg-color); padding: 40px 30px; border-radius: 15px; margin-top: 30px; border: 1px solid var(--border-color); }
-        .payment-section h2 { color: var(--primary-text-color); font-size: 2.2rem; }
-        .crypto-info { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-        .wallet-address { background: var(--surface-color); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); }
-        .wallet-address h3 { color: var(--primary-text-color); margin-bottom: 15px; }
+        .payment-networks-grid { display: grid; gap: 40px; margin-top: 30px; }
+        .network-box { background-color: var(--surface-color); padding: 30px; border-radius: 10px; border: 1px solid var(--border-color); }
+        .network-box h3 { font-size: 1.8rem; color: var(--primary-text-color); margin-bottom: 20px; text-align: center; }
+        .network-box-content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+        .wallet-address-container h4 { margin-top: 0; margin-bottom: 15px; color: var(--secondary-text-color); }
         .address-field { background: var(--bg-color); padding: 12px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.9rem; word-break: break-all; margin-bottom: 10px; border: 1px solid var(--border-color); color: var(--secondary-text-color); }
         .copy-button { background: var(--accent-color); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; transition: background 0.3s; }
         .copy-button:hover { background: var(--accent-hover-color); }
-        .qr-section { text-align: center; background: var(--surface-color); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); }
-        .qr-section h3 { color: var(--primary-text-color); }
-        .qr-code { max-width: 200px; height: auto; margin: 15px auto; border: 1px solid var(--border-color); border-radius: 8px; background-color: white; padding: 10px; }
-        .instructions { background: rgba(74, 144, 226, 0.1); padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 4px solid var(--accent-color); }
-        .instructions h3 { color: var(--accent-color); margin-bottom: 15px; }
-        .instructions ol { margin-left: 20px; }
-        .instructions li { margin-bottom: 8px; color: var(--secondary-text-color); }
-        .instructions strong { color: var(--primary-text-color); }
+        .qr-section { text-align: center; }
+        .qr-section h4 { margin-top: 0; margin-bottom: 15px; color: var(--secondary-text-color); }
+        .qr-code { max-width: 180px; height: auto; border: 1px solid var(--border-color); border-radius: 8px; background-color: white; padding: 10px; }
         .supported-currencies { display: flex; justify-content: center; gap: 20px; margin: 20px 0 30px 0; flex-wrap: wrap; }
         .currency-badge { background: var(--accent-color); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
-        .warning { background: rgba(255, 180, 0, 0.1); border-left: 4px solid #ffb400; color: #ffc94d; padding: 15px; border-radius: 8px; margin-top: 30px; }
-        .warning ul { margin-top: 10px; margin-left: 20px; }
+        .currency-badge.solana { background-color: #9945FF; }
+        .instructions { background: rgba(74, 144, 226, 0.1); padding: 20px; border-radius: 8px; margin-top: 40px; border-left: 4px solid var(--accent-color); }
+        .instructions h3 { color: var(--accent-color); margin-bottom: 15px; text-align: left;}
+        .instructions ol { margin-left: 20px; padding-left: 0; }
+        .instructions li { margin-bottom: 10px; color: var(--secondary-text-color); }
+        .instructions strong { color: var(--primary-text-color); }
+        .warning { background: rgba(255, 180, 0, 0.1); border-left: 4px solid #ffb400; color: #ffc94d; padding: 15px; border-radius: 8px; margin-top: 40px; }
+        .warning ul { margin-top: 10px; margin-left: 20px; padding-left: 0; list-style-type: none;}
         .warning strong { color: white; }
+        
         .contact-form { max-width: 700px; margin: 40px auto 0 auto; display: flex; flex-direction: column; gap: 20px; }
         .contact-form input, .contact-form textarea { width: 100%; padding: 15px; border-radius: 5px; border: 1px solid var(--border-color); background-color: var(--surface-color); color: var(--primary-text-color); font-size: 1rem; }
         .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--secondary-text-color); }
@@ -62,7 +66,11 @@
         .alternative-contact { text-align: center; margin-top: 50px; }
         .alternative-contact p { margin-bottom: 20px; font-size: 1.1rem; }
         .footer { background-color: var(--bg-color); color: var(--secondary-text-color); text-align: center; padding: 30px 20px; border-top: 1px solid var(--border-color); }
-        @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .header { min-height: 80vh; } .cta-buttons { flex-direction: column; align-items: center; } .btn { width: 80%; text-align: center; } .crypto-info { grid-template-columns: 1fr; } }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .header { min-height: 80vh; } .cta-buttons { flex-direction: column; align-items: center; } .btn { width: 80%; text-align: center; }
+            .network-box-content { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -79,106 +87,91 @@
     </header>
 
     <main>
-        <section id="features" class="features">
-            <div class="container">
-                <h2><span class="lang-label">(EN) What We Offer</span><span class="lang-label">(DE) Unsere Dienstleistungen</span></h2>
-                <div class="features-grid">
-                    <article class="feature-card"><h3><span class="lang-label">(EN) Precise Text Translation</span><span class="lang-label">(DE) Präzise Textübersetzung</span></h3><p><span class="lang-label">(EN) We don't just translate your texts; we understand them. Our AI models are trained on complex terminologies for a precise, context-aware translation.</span><span class="lang-label">(DE) Wir übersetzen Ihre Texte nicht nur, wir verstehen sie. Unsere KI-Modelle sind auf komplexe Terminologien trainiert, um eine präzise, kontexttreue Übersetzung zu gewährleisten.</span></p></article>
-                    <article class="feature-card"><h3><span class="lang-label">(EN) Multimedia Localization</span><span class="lang-label">(DE) Multimedia-Lokalisierung</span></h3><p><span class="lang-label">(EN) Reach a global audience with perfectly synchronized AI voice-overs and precise subtitles. Upon request, we also offer AI-powered lip-sync translation for a truly seamless viewing experience.</span><span class="lang-label">(DE) Erreichen Sie ein globales Publikum mit perfekt synchronisierten KI-Voice-Overs und präzisen Untertiteln. Auf Wunsch bieten wir auch KI-gestützte Lip-Sync-Übersetzungen für ein absolut nahtloses Seherlebnis an.</span></p></article>
-                    <article class="feature-card"><h3><span class="lang-label">(EN) Broad Language Support</span><span class="lang-label">(DE) Umfassende Sprachunterstützung</span></h3><p><span class="lang-label">(EN) We support a wide range of languages, including but not limited to:</span><span class="lang-label">(DE) Wir unterstützen eine Vielzahl von Sprachen, darunter:</span></p><ul class="language-list"><li>中文 (Chinese, Chinesisch)</li><li>Español (Spanish, Spanisch)</li><li>हिन्दी (Hindi, Hindi)</li><li>العربية (Arabic, Arabisch)</li><li>Português (Portuguese, Portugiesisch)</li><li>Русский (Russian, Russisch)</li><li>日本語 (Japanese, Japanisch)</li><li>Türkçe (Turkish, Türkisch)</li><li>... and many more.</li></ul></article>
-                </div>
-            </div>
-        </section>
+        <section id="features" class="features"><div class="container"><h2><span class="lang-label">(EN) What We Offer</span><span class="lang-label">(DE) Unsere Dienstleistungen</span></h2><div class="features-grid"><article class="feature-card"><h3><span class="lang-label">(EN) Precise Text Translation</span><span class="lang-label">(DE) Präzise Textübersetzung</span></h3><p><span class="lang-label">(EN) We don't just translate your texts; we understand them. Our AI models are trained on complex terminologies for a precise, context-aware translation.</span><span class="lang-label">(DE) Wir übersetzen Ihre Texte nicht nur, wir verstehen sie. Unsere KI-Modelle sind auf komplexe Terminologien trainiert, um eine präzise, kontexttreue Übersetzung zu gewährleisten.</span></p></article><article class="feature-card"><h3><span class="lang-label">(EN) Multimedia Localization</span><span class="lang-label">(DE) Multimedia-Lokalisierung</span></h3><p><span class="lang-label">(EN) Reach a global audience with perfectly synchronized AI voice-overs and precise subtitles. Upon request, we also offer AI-powered lip-sync translation for a truly seamless viewing experience.</span><span class="lang-label">(DE) Erreichen Sie ein globales Publikum mit perfekt synchronisierten KI-Voice-Overs und präzisen Untertiteln. Auf Wunsch bieten wir auch KI-gestützte Lip-Sync-Übersetzungen für ein absolut nahtloses Seherlebnis an.</span></p></article><article class="feature-card"><h3><span class="lang-label">(EN) Broad Language Support</span><span class="lang-label">(DE) Umfassende Sprachunterstützung</span></h3><p><span class="lang-label">(EN) We support a wide range of languages, including but not limited to:</span><span class="lang-label">(DE) Wir unterstützen eine Vielzahl von Sprachen, darunter:</span></p><ul class="language-list"><li>中文 (Chinese, Chinesisch)</li><li>Español (Spanish, Spanisch)</li><li>हिन्दी (Hindi, Hindi)</li><li>العربية (Arabic, Arabisch)</li><li>Português (Portuguese, Portugiesisch)</li><li>Русский (Russian, Russisch)</li><li>日本語 (Japanese, Japanisch)</li><li>Türkçe (Turkish, Türkisch)</li><li>... and many more.</li></ul></article></div></div></section>
         <section id="demo" class="demo"><div class="container"><div class="demo-content"><h2><span class="lang-label">(EN) See Our Technology in Action</span><span class="lang-label">(DE) Sehen Sie unsere Technologie in Aktion</span></h2><p><span class="lang-label">(EN) This demo video showcases the quality and versatility of our AI translation technology. See for yourself how we make complex content accessible to a global audience.</span><span class="lang-label">(DE) Dieses Demo-Video zeigt die Qualität und Vielseitigkeit unserer KI-Übersetzungstechnologie. Sehen Sie selbst, wie wir komplexe Inhalte für ein globales Publikum zugänglich machen.</span></p><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/GI7iG-_znWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></div></section>
+        
         <section id="payment">
             <div class="container">
                 <div class="payment-section">
-                    <h2><span class="lang-label">(EN) Pay with Cryptocurrency</span><span class="lang-label">(DE) Bezahlung mit Kryptowährungen</span></h2>
-                    <p style="text-align: center; margin-bottom: 20px; color: var(--secondary-text-color);"><span class="lang-label">(EN) We accept decentralized payments for maximum independence and security.</span><span class="lang-label">(DE) Wir akzeptieren dezentrale Zahlungen für maximale Unabhängigkeit und Sicherheit.</span></p>
-                    <div class="supported-currencies"><span class="currency-badge">ETH (Ethereum)</span><span class="currency-badge">USDC (ERC-20)</span><span class="currency-badge">EURC (ERC-20)</span></div>
-                    <div class="crypto-info">
-                        <div class="wallet-address">
-                            <h3>Wallet-Adresse (ETH & ERC-20)</h3>
-                            <div class="address-field" id="walletAddress">0x93C2bCe28C8Ce2088a8F9A21baaB419d3966651D</div>
-                            <button class="copy-button" onclick="copyAddress()">📋 Adresse kopieren</button>
+                    <h2 style="font-size: 2.2rem;"><span class="lang-label">(EN) Pay with Cryptocurrency</span><span class="lang-label">(DE) Bezahlung mit Kryptowährungen</span></h2>
+                    <p style="text-align: center; margin-bottom: 20px; color: var(--secondary-text-color);"><span class="lang-label">(EN) We accept decentralized payments on multiple networks for flexibility and low fees.</span><span class="lang-label">(DE) Wir akzeptieren dezentrale Zahlungen auf mehreren Netzwerken für Flexibilität und niedrige Gebühren.</span></p>
+                    <div class="supported-currencies"><span class="currency-badge">ETH (Ethereum)</span><span class="currency-badge">USDC (ERC-20)</span><span class="currency-badge solana">SOL (Solana)</span></div>
+
+                    <div class="payment-networks-grid">
+                        <div class="network-box">
+                            <h3><span class="lang-label">(EN) Ethereum Network</span><span class="lang-label">(DE) Ethereum-Netzwerk</span></h3>
+                            <div class="network-box-content">
+                                <div class="wallet-address-container">
+                                    <h4><span class="lang-label">(EN) Address for ETH & USDC</span><span class="lang-label">(DE) Adresse für ETH & USDC</span></h4>
+                                    <div class="address-field" id="ethAddress">0x93C2bCe28C8Ce2088a8F9A21baaB419d3966651D</div>
+                                    <button class="copy-button" onclick="copyAddress('ethAddress', this)">📋 Adresse kopieren</button>
+                                </div>
+                                <div class="qr-section">
+                                    <h4><span class="lang-label">(EN) Scan QR Code</span><span class="lang-label">(DE) QR-Code scannen</span></h4>
+                                    <img src="wallet-qr-code-eth.png" alt="Ethereum Wallet QR Code" class="qr-code">
+                                </div>
+                            </div>
                         </div>
-                        <div class="qr-section">
-                            <h3>QR-Code scannen</h3>
-                            <img src="wallet-qr-code.png" alt="Wallet QR Code" class="qr-code" id="qrCode">
+                        <div class="network-box">
+                            <h3><span class="lang-label">(EN) Solana Network</span><span class="lang-label">(DE) Solana-Netzwerk</span></h3>
+                            <div class="network-box-content">
+                                <div class="wallet-address-container">
+                                    <h4><span class="lang-label">(EN) Address for SOL</span><span class="lang-label">(DE) Adresse für SOL</span></h4>
+                                    <div class="address-field" id="solAddress">DZaq31KDzQXAMcyiSsQTRHvu2dypL1Th8sWKoWDhBDbL</div>
+                                    <button class="copy-button" onclick="copyAddress('solAddress', this)">📋 Adresse kopieren</button>
+                                </div>
+                                <div class="qr-section">
+                                    <h4><span class="lang-label">(EN) Scan QR Code</span><span class="lang-label">(DE) QR-Code scannen</span></h4>
+                                    <img src="wallet-qr-code-sol.png" alt="Solana Wallet QR Code" class="qr-code">
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="instructions">
                         <h3><span class="lang-label">(EN) Payment Instructions</span><span class="lang-label">(DE) Zahlungsanweisungen</span></h3>
                         <ol>
-                            <li><strong>Kontakt aufnehmen:</strong> <span class="lang-label">(EN) You will receive a detailed offer via e-mail (e.g., "200 USDC for the AI translation").</span><span class="lang-label">(DE) Sie erhalten ein detailliertes Angebot per E-Mail (z.B. "200 USDC für die KI-Übersetzung").</span></li>
-                            <li><strong>Zahlung senden:</strong> <span class="lang-label">(EN) Send the agreed amount to the wallet address listed above.</span><span class="lang-label">(DE) Senden Sie den vereinbarten Betrag an die oben angegebene Wallet-Adresse.</span></li>
-                            <li><strong>Bestätigung senden:</strong> <span class="lang-label">(EN) Reply to our offer email with the transaction ID (TXID).</span><span class="lang-label">(DE) Antworten Sie auf unsere Angebots-E-Mail mit der Transaktions-ID (TXID).</span></li>
-                            <li><strong>Verifizierung:</strong> <span class="lang-label">(EN) We verify the payment via a block explorer like Etherscan.io.</span><span class="lang-label">(DE) Wir verifizieren die Zahlung über einen Block-Explorer wie Etherscan.io.</span></li>
+                            <li><strong><span class="lang-label">(EN) Receive Offer:</span><span class="lang-label">(DE) Angebot erhalten:</span></strong> <span class="lang-label">(EN) You will receive a detailed offer via e-mail (e.g., "200 USDC or the equivalent in ETH/SOL for the translation").</span><span class="lang-label">(DE) Sie erhalten ein detailliertes Angebot per E-Mail (z.B. "200 USDC oder der Gegenwert in ETH/SOL für die Übersetzung").</span></li>
+                            <li><strong><span class="lang-label">(EN) Send Payment:</span><span class="lang-label">(DE) Zahlung senden:</span></strong> <span class="lang-label">(EN) Send the agreed amount to the correct wallet address for the chosen network (see above).</span><span class="lang-label">(DE) Senden Sie den vereinbarten Betrag an die korrekte Wallet-Adresse für das gewählte Netzwerk (siehe oben).</span></li>
+                            <li><strong><span class="lang-label">(EN) Send Confirmation:</span><span class="lang-label">(DE) Bestätigung senden:</span></strong> <span class="lang-label">(EN) Reply to our offer email with the transaction ID (TxHash or TXID).</span><span class="lang-label">(DE) Antworten Sie auf unsere Angebots-E-Mail mit der Transaktions-ID (TxHash oder TXID).</span></li>
+                            <li><strong><span class="lang-label">(EN) Verification:</span><span class="lang-label">(DE) Verifizierung:</span></strong> <span class="lang-label">(EN) We verify the payment via the corresponding block explorer (e.g., Etherscan.io for Ethereum, Solscan.io for Solana).</span><span class="lang-label">(DE) Wir verifizieren die Zahlung über den entsprechenden Block-Explorer (z.B. Etherscan.io für Ethereum, Solscan.io für Solana).</span></li>
                         </ol>
                     </div>
+
                     <div class="warning">
-                        <strong><span class="lang-label">(EN) Important Notes</span><span class="lang-label">(DE) Wichtige Hinweise</span></strong>
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li><span class="lang-label">(EN) Only send ETH or ERC-20 tokens (USDC, EURC) to this address.</span><span class="lang-label">(DE) Senden Sie nur ETH oder ERC-20 Token (USDC, EURC) an diese Adresse.</span></li>
-                            <li><span class="lang-label">(EN) You are responsible for the transaction fees (gas fees).</span><span class="lang-label">(DE) Transaktionsgebühren (Gas Fees) gehen zu Ihren Lasten.</span></li>
-                            <li><span class="lang-label">(EN) Always double-check the address before sending.</span><span class="lang-label">(DE) Überprüfen Sie die Adresse sorgfältig vor dem Senden.</span></li>
+                        <strong><span class="lang-label">(EN) Important: Please verify the network!</span><span class="lang-label">(DE) Wichtig: Bitte Netzwerk überprüfen!</span></strong>
+                        <ul>
+                            <li><span class="lang-label">(EN) Only send **ETH and USDC** to the **0x...** address (Ethereum Network).</span><span class="lang-label">(DE) Senden Sie **ETH und USDC** nur an die **0x...** Adresse (Ethereum-Netzwerk).</span></li>
+                            <li><span class="lang-label">(EN) Only send **SOL** to the **DZaq...** address (Solana Network).</span><span class="lang-label">(DE) Senden Sie **SOL** nur an die **DZaq...** Adresse (Solana-Netzwerk).</span></li>
+                            <li><span class="lang-label">(EN) Sending coins to the wrong network will result in a **total loss of funds**.</span><span class="lang-label">(DE) Das Senden von Coins an das falsche Netzwerk führt zu einem **Totalverlust des Guthabens**.</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2><span class="lang-label">(EN) Let's Start Your Project</span><span class="lang-label">(DE) Starten wir Ihr Projekt</span></h2>
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    <input type="hidden" name="access_key" value="53e95088-7ffd-48a3-8e83-26a350404fae">
-                    <input type="hidden" name="subject" value="Contact Inquiry from CosmoVerse">
-                    <input type="text" name="name" placeholder="Your Name / Ihr Name" required>
-                    <input type="email" name="email" placeholder="Your Email / Ihre E-Mail" required>
-                    <textarea name="message" rows="6" placeholder="Tell us about your project... / Erzählen Sie uns von Ihrem Projekt..." required></textarea>
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                    <button type="submit" class="btn"><span class="lang-label">(EN) Send Request</span><span class="lang-label">(DE) Anfrage senden</span></button>
-                </form>
-                <div class="alternative-contact">
-                    <p><span class="lang-label">(EN) Or contact us directly:</span><span class="lang-label">(DE) Oder kontaktieren Sie uns direkt:</span></p>
-                    <div class="cta-buttons">
-                        <a href="mailto:kaan@cosmo-mann.de?subject=Inquiry%20about%20AI%20Translation%20Services" class="btn btn-secondary"><span class="lang-label">(EN) Email Us Directly</span><span class="lang-label">(DE) Direkt mailen</span></a>
-                        <a href="https://discord.gg/uWtyGsfJPv" target="_blank" class="btn btn-secondary"><span class="lang-label">(EN) Join Community</span><span class="lang-label">(DE) Community beitreten</span></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
+        <section id="contact" class="contact"><div class="container"><h2><span class="lang-label">(EN) Let's Start Your Project</span><span class="lang-label">(DE) Starten wir Ihr Projekt</span></h2><form action="https://api.web3forms.com/submit" method="POST" class="contact-form"><input type="hidden" name="access_key" value="53e95088-7ffd-48a3-8e83-26a350404fae"><input type="hidden" name="subject" value="Contact Inquiry from CosmoVerse"><input type="text" name="name" placeholder="Your Name / Ihr Name" required><input type="email" name="email" placeholder="Your Email / Ihre E-Mail" required><textarea name="message" rows="6" placeholder="Tell us about your project... / Erzählen Sie uns von Ihrem Projekt..." required></textarea><input type="checkbox" name="botcheck" class="hidden" style="display: none;"><button type="submit" class="btn"><span class="lang-label">(EN) Send Request</span><span class="lang-label">(DE) Anfrage senden</span></button></form><div class="alternative-contact"><p><span class="lang-label">(EN) Or contact us directly:</span><span class="lang-label">(DE) Oder kontaktieren Sie uns direkt:</span></p><div class="cta-buttons"><a href="mailto:kaan@cosmo-mann.de?subject=Inquiry%20about%20AI%20Translation%20Services" class="btn btn-secondary"><span class="lang-label">(EN) Email Us Directly</span><span class="lang-label">(DE) Direkt mailen</span></a><a href="https://discord.gg/uWtyGsfJPv" target="_blank" class="btn btn-secondary"><span class="lang-label">(EN) Join Community</span><span class="lang-label">(DE) Community beitreten</span></a></div></div></div></section>
     </main>
 
     <footer class="footer"><div class="container"><p>© 2025 CosmoVerse. All Rights Reserved.</p></div></footer>
-
+    
     <script>
-        function copyAddress() {
-            const addressField = document.getElementById('walletAddress');
+        function copyAddress(elementId, buttonElement) {
+            const addressField = document.getElementById(elementId);
             const address = addressField.textContent.trim(); 
             navigator.clipboard.writeText(address).then(function() {
-                const button = document.querySelector('.copy-button');
-                const originalText = button.textContent;
-                button.textContent = '✅ Kopiert!';
-                button.style.background = 'var(--success-color)';
+                const originalText = buttonElement.textContent;
+                buttonElement.textContent = '✅ Kopiert!';
+                buttonElement.style.background = 'var(--success-color)';
                 setTimeout(function() {
-                    button.textContent = originalText;
-                    button.style.background = 'var(--accent-color)';
+                    buttonElement.textContent = originalText;
+                    buttonElement.style.background = 'var(--accent-color)';
                 }, 2000);
             }).catch(function(err) {
                 console.error('Fehler beim Kopieren: ', err);
                 alert('Adresse konnte nicht kopiert werden. Bitte manuell markieren und kopieren.');
             });
         }
-        document.addEventListener('DOMContentLoaded', function() {
-            const qrImage = document.getElementById('qrCode');
-            qrImage.onerror = function() {
-                this.style.display = 'none';
-                const errorText = document.createElement('p');
-                errorText.textContent = 'QR-Code konnte nicht geladen werden. Bitte Adresse manuell kopieren.';
-                this.parentElement.appendChild(errorText);
-            };
-        });
     </script>
 </body>
 </html>
